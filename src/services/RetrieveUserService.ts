@@ -1,8 +1,9 @@
+import AppError from '../error/AppError';
+
 import User from '../models/User';
 
 import IUsersRepository from '../repositories/IUsersRepository';
 import container from '../repositories';
-import AppError from '../error/AppError';
 
 class RetrieveUserService {
   private usersRepository: IUsersRepository;
