@@ -1,14 +1,9 @@
 import { Router } from 'express';
-import AppError from '../error/AppError';
+
+import usersRoutes from './users.routes';
 
 const routes = Router();
 
-routes.get('/', (request, response) => {
-  return response.json({ message: 'Hello World' });
-});
-
-routes.get('/error', (_request, _response) => {
-  throw new AppError('Bye World');
-});
+routes.use('/users', usersRoutes);
 
 export default routes;
