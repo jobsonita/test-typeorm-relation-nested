@@ -16,7 +16,7 @@ class Post {
   @Column()
   user_id: string;
 
-  @ManyToOne(() => User, (user) => user.posts)
+  @ManyToOne(() => User, (user) => user.posts, { eager: true })
   @JoinColumn({ name: 'user_id' })
   user: User;
 

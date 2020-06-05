@@ -22,7 +22,9 @@ class User {
   @Exclude()
   password: string;
 
-  @OneToOne(() => UserProfile, (user_profile) => user_profile.user)
+  @OneToOne(() => UserProfile, (user_profile) => user_profile.user, {
+    eager: true,
+  })
   user_profile: UserProfile;
 
   @OneToMany(() => Post, (post) => post.user)
