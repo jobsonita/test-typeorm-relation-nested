@@ -6,6 +6,8 @@ Use this [Insomnia workspace](./other/insomnia.json) to make REST requests.
 
 <p align="center"><img alt="Table relationships" src="./.github/tables.png" /></p>
 
+Objective: retrieve both user and user_profile when retrieving the list of posts.
+
 ### Base models
 
 ```js
