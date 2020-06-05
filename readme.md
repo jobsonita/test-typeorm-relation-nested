@@ -97,7 +97,7 @@ The response we get in all queries (but the last one, which uses select to remov
 ]
 ```
 
-### Eager Loading
+### [Eager Loading](https://github.com/jobsonita/test-typeorm-relation-nested/compare/solution1)
 
 ```js
 /* Post.ts */
@@ -124,7 +124,7 @@ Cons:
 - only allow one way (post -> user -> user_profile), cannot have on both ways ([typeorm restriction](https://github.com/typeorm/typeorm/blob/master/docs/eager-and-lazy-relations.md#eager-relations))
 - loads all fields (selects everything)
 
-### Find with `relations` array
+### [Find with `relations` array](https://github.com/jobsonita/test-typeorm-relation-nested/compare/solution2)
 
 ```js
 /* PostsRepository.ts */
@@ -151,7 +151,7 @@ Cons:
 
 ### QueryBuilder
 
-#### Plain
+#### [Plain](https://github.com/jobsonita/test-typeorm-relation-nested/commit/b7f6c31d38ef1ce7217f30cf7111904780d87d5b)
 
 ```js
 /* PostsRepository.ts */
@@ -177,7 +177,7 @@ Cons:
 - bad readability
 - need to know the nested relations
 
-#### With aliases (better readability)
+#### [With aliases (better readability)](https://github.com/jobsonita/test-typeorm-relation-nested/commit/bc47d7478306cbe91dccad5aadaf19ce774f38ea)
 
 ```js
 /* PostsRepository.ts */
@@ -194,7 +194,7 @@ Cons:
 SELECT "p"."id" AS "p_id", "p"."user_id" AS "p_user_id", "p"."title" AS "p_title", "p"."content" AS "p_content", "u"."id" AS "u_id", "u"."email" AS "u_email", "u"."password" AS "u_password", "up"."id" AS "up_id", "up"."user_id" AS "up_user_id", "up"."name" AS "up_name", "up"."contact_email" AS "up_contact_email" FROM "posts" "p" LEFT JOIN "users" "u" ON "u"."id"="p"."user_id"  LEFT JOIN "user_profiles" "up" ON "up"."user_id"="u"."id"
 ```
 
-#### With select
+#### [With select](https://github.com/jobsonita/test-typeorm-relation-nested/commit/4ec3af35e3f69a7569d51b6a1e92e5b1775a518e)
 
 ```js
 /* PostsRepository.ts */
