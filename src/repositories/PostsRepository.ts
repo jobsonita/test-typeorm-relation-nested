@@ -22,7 +22,9 @@ class PostsRepository implements IPostsRepository {
   }
 
   async findAll(): Promise<Post[]> {
-    return this.ormRepository.find();
+    return this.ormRepository.find({
+      relations: ['user', 'user.user_profile'],
+    });
   }
 
   async findById(id: string): Promise<Post | undefined> {
