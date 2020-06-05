@@ -97,6 +97,9 @@ The response we get in all queries (but the last one, which uses select to remov
 ]
 ```
 
+The different methods are presented in different branches.
+Click the titles of each section to jump to the related commit.
+
 ### [Eager Loading](https://github.com/jobsonita/test-typeorm-relation-nested/compare/solution1)
 
 ```js
