@@ -26,6 +26,9 @@ class PostsRepository implements IPostsRepository {
       .createQueryBuilder('p')
       .leftJoinAndSelect('p.user', 'u')
       .leftJoinAndSelect('u.user_profile', 'up')
+      .select(['p.id', 'p.title', 'p.content'])
+      .addSelect(['u.id', 'u.email'])
+      .addSelect(['up.id', 'up.name', 'up.contact_email'])
       .getMany();
   }
 
