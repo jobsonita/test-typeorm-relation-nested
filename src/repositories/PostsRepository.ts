@@ -23,9 +23,9 @@ class PostsRepository implements IPostsRepository {
 
   async findAll(): Promise<Post[]> {
     return this.ormRepository
-      .createQueryBuilder()
-      .leftJoinAndSelect('Post.user', 'Post__user')
-      .leftJoinAndSelect('Post__user.user_profile', 'Post__user__user_profile')
+      .createQueryBuilder('p')
+      .leftJoinAndSelect('p.user', 'u')
+      .leftJoinAndSelect('u.user_profile', 'up')
       .getMany();
   }
 
