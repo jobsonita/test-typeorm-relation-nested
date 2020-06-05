@@ -120,6 +120,11 @@ Click the titles of each section to jump to the related commit.
     eager: true,
   })
   user_profile: UserProfile;
+
+/* PostsRepository.ts */
+  async findAll(): Promise<Post[]> {
+    return this.ormRepository.find();
+  }
 ```
 
 ```sql
