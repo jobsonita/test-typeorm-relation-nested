@@ -97,6 +97,9 @@ The response we get in all queries (but the last one, which uses select to remov
 ]
 ```
 
+Note: we can hide the password by applying `classToClass` to the posts array in `PostsController.ts`.
+I forgot to apply it. For reference, check its application on `UsersController.ts`.
+
 The different methods are presented in different branches.
 Click the titles of each section to jump to the related commit.
 
