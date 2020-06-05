@@ -73,6 +73,8 @@ class UserProfile {
 }
 ```
 
+Note: when running the code, it's necessary to have a database like postgres or mysql running and fill ormconfig.json with the respective settings.
+
 ## Comparison
 
 The response we get in all queries (but the last one, which uses select to remove some fields) is:
